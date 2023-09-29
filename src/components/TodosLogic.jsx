@@ -12,7 +12,7 @@ const TodosLogic = () => {
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
-  };
+  }
   
   useEffect(() => {
     // storing todos items

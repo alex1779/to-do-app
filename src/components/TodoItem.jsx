@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import styles from '@/styles/TodoItem.module.css';
 import { FaTrash } from "react-icons/fa";
@@ -56,5 +57,21 @@ const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
         </li>
     );
   };
+
+  TodoItem.defaultProps = {
+    itemProp: [],
+    handleChange: () => {},
+    delTodo: () => {},
+    setUpdate: () => {},
+  };
+  
+  TodoItem.propTypes = {
+    itemProp: PropTypes.array,
+    handleChange: PropTypes.func,
+    delTodo: PropTypes.func,
+    setUpdate: PropTypes.func,
+  };
+
+  
   export default TodoItem;
   

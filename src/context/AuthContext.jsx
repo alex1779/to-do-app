@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useContext, createContext } from 'react';
 
 const AuthContext = createContext(null);
@@ -11,4 +12,13 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+AuthProvider.defaultProps = {
+  children: '',
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.string,
+};
+
 export const useAuthContext = () => useContext(AuthContext);
